@@ -19,10 +19,10 @@ class Search extends Component {
 
       //       return (
       <div className="card card-body mb-4 p-4">
-        <h1 className="display-4 text-center">
+        {/* <h1 className="display-4 text-center">
           <i className="fas fa-music"></i> Search For A Song
         </h1>
-        <p className="lead text-center">Get The Lyrics For Any Song</p>
+        <p className="lead text-center">Get The Lyrics For Any Song</p> */}
         <div>
           <div className="form-group">
             <input
@@ -30,7 +30,6 @@ class Search extends Component {
               className="form-control form-control-lg"
               placeholder="Song Title....."
               name="trackTitle"
-              width="20 px"
               onChange={e => this.searchInputHandler(e)}
             />
           </div>
