@@ -3,10 +3,22 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Spinner from "../layout/Spinner";
 import SearchTracks from "./SearchTracks";
+import Search1 from "../tracks/Search1";
+
+import Moment from "react-moment";
 class Lyrics extends Component {
   state = {
     track: {},
     lyrics: {}
+  };
+  searchInputHandler = e => {
+    if (e.key == "Enter") {
+      this.props.history.replace("/search/" + this.state.trackTitle);
+    } else {
+      this.setState({
+        trackTitle: e.target.value
+      });
+    }
   };
   componentDidMount() {
     axios
@@ -40,9 +52,10 @@ class Lyrics extends Component {
       return (
         <React.Fragment>
           <div class="text-right">
-            <Link to="/" className="btn btn-dark btn-sm mb-4">
+            {/* <Link to="/" className="btn btn-dark btn-sm mb-4">
               Go Back
-            </Link>
+            </Link> */}
+            <Search1 />
           </div>
           <div className="card">
             <h5 className="card-header">

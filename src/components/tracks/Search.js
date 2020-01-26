@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Consumer } from "../../context";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class Search extends Component {
   state = {
@@ -12,6 +12,8 @@ class Search extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
+    console.log("Search", this.props);
+
     return (
       //   <Consumer>
       //     {value => {
@@ -31,6 +33,11 @@ class Search extends Component {
               placeholder="Song Title....."
               name="trackTitle"
               width="20 px"
+              onKeyPress={e => {
+                if (e.key == "Enter") {
+                  this.props.history.push("/search/" + this.state.trackTitle);
+                }
+              }}
               onChange={e => this.searchInputHandler(e)}
             />
           </div>
@@ -51,4 +58,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

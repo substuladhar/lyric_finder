@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import Track from "./Track";
 import Spinner from "../layout/Spinner";
-
+import Search1 from "../tracks/Search1";
 class SearchTracks extends Component {
   state = {
     track_list: []
@@ -37,10 +37,11 @@ class SearchTracks extends Component {
         </span> */}
         <React.Fragment>
           <div class="text-right">
-            <Link to="/" className="btn btn-dark btn-sm mb-4">
+            {/* <Link to="/" className="btn btn-dark btn-sm mb-4">
               Go Back
-            </Link>
+            </Link> */}
           </div>
+          <Search1 />
           {this.state.track_list.length ? (
             <>
               <h3 className="text-center mb-5">
@@ -63,4 +64,4 @@ class SearchTracks extends Component {
   }
 }
 
-export default SearchTracks;
+export default withRouter(SearchTracks);
