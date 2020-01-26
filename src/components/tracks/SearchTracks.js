@@ -29,6 +29,10 @@ class SearchTracks extends Component {
     this.findTrack(this.props.match.params.keyword);
   }
 
+  // componentDidReceiveProps() {
+  //   this.findTrack(this.props.match.params.keyword);
+  // }
+
   render() {
     return (
       <div>

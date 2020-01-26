@@ -40,12 +40,12 @@ class Search1 extends Component {
             />
           </div>
           <div class="text-right col-3">
-            <Link
-              to={"/search/" + this.state.trackTitle}
+            <a
+              href={"/search/" + this.state.trackTitle}
               className="btn btn-dark btn-primary btn-lg mb-5"
             >
               Get Track Lyrics
-            </Link>
+            </a>
           </div>
         </div>
       </div>
